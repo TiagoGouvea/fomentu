@@ -8,7 +8,7 @@ administrativa em `src/admin/`. O backend da aplicação fica em `functions/`.
 ## Preparar o ambiente
 
 A administração requer acesso administrativo ao projeto e Firebase CLI autenticado (`yarn firebase login`). Instale as
-ferramentas com `yarn install` e `yarn --cwd admin install`. A configuração web pública deve ser
+ferramentas com `yarn install` na raiz; ele também instala as dependências de `admin/`. A configuração web pública deve ser
 fornecida aos grupos; mantenha credenciais administrativas e segredos do provedor fora do frontend.
 
 ## Grupos e dados

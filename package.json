@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
+    "postinstall": "yarn --cwd admin install --frozen-lockfile",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "typecheck": "tsc -b",

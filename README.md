@@ -15,7 +15,6 @@ Depois, copie e execute o bloco abaixo na raiz do projeto:
 
 ```bash
 yarn install && \
-yarn --cwd admin install && \
 yarn playwright install chromium && \
 yarn dev
 ```
