@@ -5,8 +5,14 @@ avaliações humanas e de IA. Cada grupo trabalha em sua própria cópia e área
 
 ## Começar
 
-Copie `.env.example` para `.env.local` e preencha a configuração pública do Firebase fornecida pelo
-instrutor. Defina também `VITE_GROUP_ID=01`, trocando `01` pelo identificador do seu grupo
+Na raiz do projeto, crie o arquivo de configuração (o comando preserva um `.env.local` existente):
+
+```bash
+test -e .env.local || cp .env.example .env.local
+```
+
+Abra `.env.local` e preencha a configuração pública do Firebase fornecida pelo instrutor. Defina
+também `VITE_GROUP_ID=01`, trocando `01` pelo identificador do seu grupo
 (por exemplo, `ninja`). Use de 1 a 15 letras minúsculas, números ou hífens, sem hífen nas pontas.
 Reinicie o servidor após alterar a configuração. Esse identificador é público e indica o destino do
 cadastro; o acesso administrativo continua dependendo da conta autenticada.
@@ -47,9 +53,6 @@ exemplos já disponíveis no banco são fictícios. Não compartilhe credenciais
 4. **Code review:** revise, corrija e refatore o que for necessário.
 5. **Deploy:** peça ao instrutor para publicar a versão do grupo e verifique o fluxo no endereço publicado.
 
-Na etapa de revisão, use o [roteiro de code review](docs/revisao-de-codigo.md). Ele explica como
-guardar a referência inicial e traz um prompt que pode ser usado com Codex ou Claude Code.
-
 ## Verificações
 
 Em outro terminal, copie e execute o bloco abaixo para verificar a aplicação e acompanhar o teste
@@ -63,8 +66,12 @@ yarn test:e2e:emulador:visual && \
 yarn build
 ```
 
-Para executar o teste de navegador sem abrir a janela, use `yarn test:e2e:emulador`. Os testes
-salvam capturas das etapas previstas e do fim de cada teste no relatório
+`yarn test:e2e:emulador:visual` abre o navegador do teste. Para disponibilizar também o
+[painel do Firebase Emulator Suite](http://localhost:4000) durante a execução, acrescente `--ui`
+ao comando (`yarn test:e2e:emulador:visual --ui`). Para executar o teste de navegador sem abrir
+a janela, use `yarn test:e2e:emulador`.
+
+Os testes salvam capturas das etapas previstas e do fim de cada teste no relatório
 `playwright-report/index.html`. Não há captura de cada clique. Em caso de falha, há um trace em
 `test-results/`.
 

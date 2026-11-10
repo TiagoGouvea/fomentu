@@ -3,7 +3,8 @@
 Cada grupo especificará e implementará as quatro funcionalidades. Os rascunhos não definem campos,
 telas, prompts, validações nem critérios de aceite. Esses detalhes serão decididos pelos participantes.
 
-Utilizar o edital do CRITT como modelos de submissão e análise de projetos: https://www2.ufjf.br/critt/wp-content/uploads/sites/121/2025/12/Edital-retificado.pdf
+Use o [edital do CRITT em Markdown](edital-incubacao-critt-2025.md) como referência para submissão
+e análise de projetos. Consulte também a [versão em PDF](edital-incubacao-critt-2025.pdf).
 
 - F01 — Cadastrar projeto: Permitir que o proponente cadastre uma ideia publicamente, informando nome e e-mail; cada site recebe projetos para seu próprio grupo.
 - F02 — Consultar projetos: Listar os projetos do grupo e consultar seus detalhes.

@@ -2,6 +2,7 @@ import { publicGroupId } from '../lib/firebase';
 import { Button } from '@mantine/core';
 import { Brand } from '../shared/Brand';
 import { Icon } from '../shared/Icon';
+import { GroupConfigWarning } from '../shared/GroupConfigWarning';
 
 export function PublicPage({ path }: { path: string; }) {
   return <div className="public-page">
@@ -14,12 +15,13 @@ export function PublicPage({ path }: { path: string; }) {
       </nav>
     </header>
     <main className="public-content">
+      <GroupConfigWarning />
       <div className="eyebrow">
         <span /> UM ESPAÇO PARA BOAS IDEIAS</div>
       <h1>{path==='/cadastro'? 'Sua ideia começa aqui.':<>Ideias de hoje.<br />
         <em>Impactos de amanhã.</em>
       </>}</h1>
-      <p>{path==='/cadastro'? 'O cadastro público será especificado e desenvolvido durante a oficina. Ele solicitará o nome e o e-mail do proponente.':'Um lugar para apresentar ideias, construir possibilidades e dar o próximo passo em novos projetos.'}</p>{path==='/cadastro'&&!publicGroupId()&&<p role="alert">Grupo do site não configurado. Procure o responsável pela aplicação.</p>}{path!=='/cadastro'&&<Button component="a" className="button primary" href="/cadastro">Cadastrar uma ideia <Icon name="arrow" size={18} />
+      <p>{path==='/cadastro'? 'O cadastro público será especificado e desenvolvido durante a oficina. Ele solicitará o nome e o e-mail do proponente.':'Um lugar para apresentar ideias, construir possibilidades e dar o próximo passo em novos projetos.'}</p>{path==='/cadastro'&&import.meta.env.VITE_GROUP_ID?.trim()&&!publicGroupId()&&<p role="alert">Grupo do site não configurado. Procure o responsável pela aplicação.</p>}{path!=='/cadastro'&&<Button component="a" className="button primary" href="/cadastro">Cadastrar uma ideia <Icon name="arrow" size={18} />
       </Button>}<div className="public-note">
         <span className="note-icon">
           <Icon name="leaf" size={18} />

@@ -2,6 +2,7 @@ import type { FormEvent } from 'react';
 import { Brand } from '../shared/Brand';
 import { Icon } from '../shared/Icon';
 import { Button, Input } from '@mantine/core';
+import { GroupConfigWarning } from '../shared/GroupConfigWarning';
 
 type Props={ email: string; password: string; message: string; setEmail: (value: string) => void; setPassword: (value: string) => void; login: (event: FormEvent) => void; };
 
@@ -32,6 +33,7 @@ export function LoginPage({ email,password,message,setEmail,setPassword,login }:
         </div>
         <h2>Entrar na plataforma</h2>
         <p>Use os dados de acesso fornecidos pelo instrutor.</p>
+        <GroupConfigWarning />
         <form onSubmit={login}>
           <label>E-mail<Input type="email" autoComplete="username" placeholder="seuemail@exemplo.com" value={email} onChange={e => setEmail(e.target.value)} required />
           </label>
